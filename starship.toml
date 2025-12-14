@@ -117,7 +117,7 @@ disabled = false
 show_always = false
 
 [directory]
-home_symbol = "⌂"
+home_symbol = ""
 truncation_length = 2
 truncation_symbol = "□ "
 read_only = " ◈"
@@ -170,7 +170,7 @@ style = "italic dimmed yellow"
 
 [git_branch]
 format = " [$branch(:$remote_branch)]($style)"
-symbol = "[△](bold italic bright-blue)"
+symbol = "[](bold italic bright-blue)"
 style = "italic bright-blue"
 truncation_symbol = "⋯"
 truncation_length = 11
@@ -209,15 +209,16 @@ symbol = "⨀ "
 style = "bold bright-yellow"
 
 [nodejs]
-format = " [node](italic) [◫ ($version)](bold bright-green)"
+symbol = "󰎙"
+format = " [${symbol}](italic) [($version)](bold bright-green)"
 version_format = "${raw}"
 detect_files = ["package-lock.json", "yarn.lock"]
 detect_folders = ["node_modules"]
 detect_extensions = []
 
 [python]
-format = " [py](italic) [${symbol}${version}]($style)"
-symbol = "[⌉](bold bright-blue)⌊ "
+format = "[${symbol}${version}]($style)"
+symbol = "[](bold bright-blue)⌊ "
 version_format = "${raw}"
 style = "bold bright-yellow"
 
