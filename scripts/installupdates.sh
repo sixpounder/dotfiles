@@ -61,7 +61,7 @@ fi
 
 # Flatpak
 echo ":: Searching for Flatpak updates..."
-flatpak update
+flatpak update -y
 echo
 
 # Arch
