@@ -23,7 +23,7 @@ hl.on("hyprland.start", function()
     hl.exec_cmd("trash-empty 30")
 
     -- Cursor configuration
-    hl.exec_cmd(string.format("hyprctl setcursor $cursorTheme '%s'", CursorTheme))
+    hl.exec_cmd(string.format("hyprctl setcursor '%s' %s", CursorTheme, CursorSize))
     hl.exec_cmd(string.format("gsettings set org.gnome.desktop.interface cursor-theme '%s'", IconTheme))
     hl.exec_cmd(string.format("gsettings set org.gnome.desktop.interface cursor-size %s", CursorSize))
 
