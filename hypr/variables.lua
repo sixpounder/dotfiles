@@ -41,7 +41,7 @@ WindowOpacity = 1.0
 WindowInactiveOpacity = 0.8
 WindowRounding = 8
 
-WindowBorderSize = 1
+WindowBorderSize = 1 -- waiting for noctalia integration for lua
 ActiveWindowBorderColour = "rgba($primarye6)"
 InactiveWindowBorderColour = "rgba($onSurfaceVariant11)"
 
@@ -79,7 +79,7 @@ KbPinWindow = "Super, P"
 KbWindowFullscreen = "Super, F"
 KbWindowBorderedFullscreen = "Super+Alt, F"
 KbToggleWindowFloating = "Super+Alt, Space"
-KbCloseWindow = "Super, Q"
+KbCloseWindow = "SUPER + Q"
 
 -- Special workspace toggles
 KbSystemMonitor = "Ctrl+Shift, Escape"
@@ -88,10 +88,10 @@ KbCommunication = "Super, D"
 KbTodo = "Super, R"
 
 -- Apps
-KbTerminal = "Super, Return"
-KbBrowser = "Super, B"
-KbEditor = "Super, C"
-KbFileExplorer = "Super, E"
+KbTerminal = "SUPER + Return"
+KbBrowser = "SUPER + B"
+KbEditor = "SUPER + C"
+KbFileExplorer = "SUPER + E"
 
 -- Misc
 KbSession = "Ctrl+Alt, Delete"

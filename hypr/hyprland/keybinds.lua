@@ -10,20 +10,22 @@ hl.bind("SUPER + Space", noctalia_ipc_command("launcher toggle"), { description 
 hl.bind("SUPER + S", noctalia_ipc_command("controlCenter toggle"), { description = "Control center" })
 hl.bind("SUPER + comma", noctalia_ipc_command("settings toggle"), {description = "Settings" })
 hl.bind("SUPER + Escape", noctalia_ipc_command("lockScreen lock"), { description = "Lock screen" })
-
--- Media
-hl.bind("XF86AudioRaiseVolume", noctalia_ipc_command("volume increase"), { locked = true, repeating = true })
-hl.bind("XF86AudioLowerVolume", noctalia_ipc_command("volume decrease"), { locked = true, repeating = true })
-hl.bind("XF86AudioMute", noctalia_ipc_command("volume muteOutput"), { locked = true })
-hl.bind("XF86MonBrightnessUp", noctalia_ipc_command("brightness increase"), { locked = true, repeating = true })
-hl.bind("XF86MonBrightnessDown", noctalia_ipc_command("brightness decrease"), { locked = true, repeating = true })
+hl.bind("SUPER + M", noctalia_ipc_command("launcher emoji"), { description = "Lock screen" })
+hl.bind("SUPER + ALT + Space", noctalia_ipc_command("wallpaper toggle"), { description = "Wallpaper selector" })
+hl.bind("CTRL + ALT + C", noctalia_ipc_command("notifications clear"), { description = "Clear notifications" })
 
 -- Mouse bindings
 hl.bind("SUPER + mouse:272", hl.dsp.window.drag(), { mouse = true, description = "Move window" })    -- ALT + LMB: Move a window
 hl.bind("SUPER + mouse:273", hl.dsp.window.resize(), { mouse = true, description = "Resize window" })  -- ALT + RMB: Resize a window
 
+-- Apps
+hl.bind(KbFileExplorer, hl.dsp.exec_cmd(FileExplorer), { description = "File explorer" })
+hl.bind(KbTerminal, hl.dsp.exec_cmd(Terminal), { description = "Terminal" })
+hl.bind(KbBrowser, hl.dsp.exec_cmd(Browser), { description = "Browser" })
+hl.bind(KbEditor, hl.dsp.exec_cmd(Editor), { description = "Editor" })
+
 -- Tiling
-hl.bind("SUPER + Q", hl.dsp.window.close(), { description = "Close window" })
+hl.bind(KbCloseWindow, hl.dsp.window.close(), { description = "Close window" })
 
 hl.bind("SUPER + J", hl.dsp.layout("togglesplit"), { description = "Toggle window split" })
 hl.bind("SUPER + P", hl.dsp.window.pseudo(), { description = "Pseudo window" })
@@ -41,7 +43,7 @@ hl.bind("SUPER + DOWN", hl.dsp.focus({ direction = "d" }), { description = "Focu
 for workspace = 1, 10 do
   local key = "code:" .. tostring(workspace + 9)
   hl.bind("SUPER + " .. key, hl.dsp.focus({ workspace = tostring(workspace) }), { description = "Switch to workspace " .. workspace })
-  hl.bind("SUPER + SHIFT + " .. key, hl.dsp.window.move({ workspace = tostring(workspace) }), { description = "Move window to workspace " .. workspace })
+  hl.bind("SUPER + ALT + " .. key, hl.dsp.window.move({ workspace = tostring(workspace) }), { description = "Move window to workspace " .. workspace })
   hl.bind("SUPER + SHIFT + ALT + " .. key, hl.dsp.window.move({ workspace = tostring(workspace), follow = false }), { description = "Move window silently to workspace " .. workspace })
 end
 
@@ -109,3 +111,16 @@ for index = 1, 5 do
   hl.bind("SUPER + ALT + code:" .. tostring(index + 9), hl.dsp.group.active({ index = index }), { description = "Switch to group window " .. index })
 end
 
+-- Volume, brightness, keyboard backlight, and touchpad controls.
+hl.bind("XF86AudioRaiseVolume", noctalia_ipc_command("volume increase"), { locked = true, repeating = true })
+hl.bind("XF86AudioLowerVolume", noctalia_ipc_command("volume decrease"), { locked = true, repeating = true })
+hl.bind("XF86AudioMute", noctalia_ipc_command("volume muteOutput"), { locked = true })
+hl.bind("XF86AudioMicMute", noctalia_ipc_command("volume muteInput"), { locked = true, repeating = true, description = "Mute microphone" })
+hl.bind("XF86MonBrightnessUp", noctalia_ipc_command("brightness increase"), { locked = true, repeating = true })
+hl.bind("XF86MonBrightnessDown", noctalia_ipc_command("brightness decrease"), { locked = true, repeating = true })
+
+-- Media controls.
+hl.bind("XF86AudioNext", noctalia_ipc_command("media next"), { locked = true, description = "Next track" })
+hl.bind("XF86AudioPause", noctalia_ipc_command("media pause"), { locked = true, description = "Pause" })
+hl.bind("XF86AudioPlay", noctalia_ipc_command("media playPause"), { locked = true, description = "Play" })
+hl.bind("XF86AudioPrev", noctalia_ipc_command("media previous"), { locked = true, description = "Previous track" })
