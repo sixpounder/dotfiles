@@ -21,7 +21,7 @@ hl.config({
       inactive_border = noctalia_vars.surface,
     },
 
-    resize_on_border = false,
+    resize_on_border = true,
     allow_tearing = false,
     layout = "dwindle",
   },
@@ -38,7 +38,7 @@ hl.config({
 
     blur = {
       enabled = true,
-      size = 2,
+      size = 4,
       passes = 2,
       special = true,
       brightness = 0.60,
@@ -72,6 +72,10 @@ hl.config({
       gradient_rounding = 0,
       gradient_round_only_edges = false,
     },
+  },
+
+  cursor = {
+    no_warps = true
   },
 
   animations = {

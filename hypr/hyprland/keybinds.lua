@@ -24,6 +24,9 @@ hl.bind(KbTerminal, hl.dsp.exec_cmd(Terminal), { description = "Terminal" })
 hl.bind(KbBrowser, hl.dsp.exec_cmd(Browser), { description = "Browser" })
 hl.bind(KbEditor, hl.dsp.exec_cmd(Editor), { description = "Editor" })
 
+-- Screenshot
+hl.bind("PRINT", hl.dsp.exec_cmd("if area=$(slurp); then grim -g \"$area\" - | tee >(wl-copy) > ~/Pictures/Screenshots/Screenshot-$(date +%F_%T).png && dunstify --app-name Screenshot \"Screenshot copied to clipboard\" -t 1000; fi"))
+
 -- Tiling
 hl.bind(KbCloseWindow, hl.dsp.window.close(), { description = "Close window" })
 
