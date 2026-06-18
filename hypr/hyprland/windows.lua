@@ -33,3 +33,49 @@ hl.layer_rule({
     blur = true,
     blur_popups = true
 })
+
+-- Floats
+
+local float_classes = {
+    "guifetch",
+    "yad",
+    "zenity",
+    "wev",
+    "org\\.gnome\\.FileRoller",
+    "file-roller",
+    "blueman-manager",
+    "com\\.github\\.GradienceTeam\\.Gradience",
+    "feh", "imv",
+    "system-config-printer",
+    "org\\.quickshell"
+}
+hl.window_rule({
+    match = {
+        class = table.concat(float_classes, "|")
+    },
+    float = true
+})
+
+local float_titles = {
+    "Zed — Settings",
+    "(Select|Open)( a)? (File|Folder)(s)?",
+    "File (Operation|Upload)( Progress)?",
+    "Save [aA]s",
+    "Update"
+}
+hl.window_rule({
+    match = {
+        title = table.concat(float_titles, "|")
+    },
+    float = true
+})
+
+-- Custom system update program
+hl.window_rule({
+    match = {
+        title = "installupdates"
+    },
+    float = true,
+    pin = true,
+    size = {"(monitor_w*0.4)", "(monitor_h*0.4)"}
+})

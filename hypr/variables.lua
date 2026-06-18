@@ -32,7 +32,7 @@ ShadowColour = "rgba($surfaced4)"
 
 -- Gaps
 WorkspaceGaps = 10
-WindowGapsIn = 5
+WindowGapsIn = 6
 WindowGapsOut = 12
 SingleWindowGapsOut = 20
 
