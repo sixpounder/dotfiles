@@ -22,18 +22,6 @@ hl.window_rule({
     border_size = 0
 })
 
--- Noctalia elements
-
-hl.layer_rule({
-    name = "noctalia",
-    match = {
-        namespace = "noctalia-background-.*$"
-    },
-    ignore_alpha = 0.5,
-    blur = true,
-    blur_popups = true
-})
-
 -- Floats
 
 local float_classes = {
@@ -67,7 +55,8 @@ hl.window_rule({
     match = {
         title = table.concat(float_titles, "|")
     },
-    float = true
+    float = true,
+    move = {"(window_x+(window_w*0.5))", "(window_y+(window_h*0.5))"}
 })
 
 -- Custom system update program
