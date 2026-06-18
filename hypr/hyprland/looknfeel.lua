@@ -134,3 +134,11 @@ hl.config({
     no_update_news = true,
   },
 })
+
+-- Prevent focus loss on attention seekers
+hl.window_rule({
+  match = {
+    class = "org.telegram.desktop|org.signal.Signal"
+  },
+  focus_on_activate = false
+})

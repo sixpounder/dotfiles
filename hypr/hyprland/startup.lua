@@ -12,7 +12,15 @@ hl.on("hyprland.start", function()
 
     -- Keyring and authentication agents
     hl.exec_cmd("gnome-keyring-daemon --start --components=secrets")
-    hl.exec_cmd("/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1")
+    
+    -- These are disabled because we use the noctalia polkit plugin.
+    -- Currently there is no way (apparently) to query noctalia shell
+    -- for a list of installed plugins, which appears to be in the next version (5).
+    -- Once it is there, this should be enabled conditionally if the polkit plugin is
+    -- not installed.
+
+    -- Pick one
+    -- hl.exec_cmd("/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1")
     -- hl.exec_cmd("/usr/lib/hyprpolkitagent/hyprpolkitagent")   -- optional
 
     -- Clipboard history (text and image)
