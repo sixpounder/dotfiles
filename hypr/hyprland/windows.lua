@@ -14,7 +14,7 @@ hl.window_rule({
     match = {
         title = "Picture.?in.?[Pp]icture"
     },
-    move = { "(monitor_w-window_w-24)", "(monitor_h-window_h-24)" },
+    move = { "(monitor_w-window_w-16)", "(monitor_h-window_h-16)" },
     size = "768 432",
     keep_aspect_ratio = true,
     float = true,
@@ -37,6 +37,7 @@ local float_classes = {
     "system-config-printer",
     "org\\.quickshell"
 }
+
 hl.window_rule({
     match = {
         class = table.concat(float_classes, "|")
@@ -44,7 +45,7 @@ hl.window_rule({
     float = true
 })
 
-local float_titles = {
+local dialogs = {
     "Zed — Settings",
     "(Select|Open)( a)? (File|Folder)(s)?",
     "File (Operation|Upload)( Progress)?",
@@ -53,10 +54,10 @@ local float_titles = {
 }
 hl.window_rule({
     match = {
-        title = table.concat(float_titles, "|")
+        title = table.concat(dialogs, "|")
     },
     float = true,
-    move = {"(window_x+(window_w*0.5))", "(window_y+(window_h*0.5))"}
+    center = true
 })
 
 -- Custom system update program
