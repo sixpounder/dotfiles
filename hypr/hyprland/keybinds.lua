@@ -1,18 +1,17 @@
-local noctalia_ipc = "qs -c noctalia-shell ipc call"
-local function noctalia_ipc_command(cmd)
-    return function()
-        hl.dispatch(hl.dsp.exec_raw(noctalia_ipc .. " " .. cmd))
+local function noctalia_command(cmd)
+  return function()
+        hl.dispatch(hl.dsp.exec_cmd("noctalia msg" .. " " .. cmd))
     end
 end
 
 -- Core (noctalia shell)
-hl.bind("SUPER + Space", noctalia_ipc_command("launcher toggle"), { description = "Launcher" })
-hl.bind("SUPER + S", noctalia_ipc_command("controlCenter toggle"), { description = "Control center" })
-hl.bind("SUPER + comma", noctalia_ipc_command("settings toggle"), {description = "Settings" })
-hl.bind("SUPER + Escape", noctalia_ipc_command("lockScreen lock"), { description = "Lock screen" })
-hl.bind("SUPER + M", noctalia_ipc_command("launcher emoji"), { description = "Lock screen" })
-hl.bind("SUPER + ALT + Space", noctalia_ipc_command("wallpaper toggle"), { description = "Wallpaper selector" })
-hl.bind("CTRL + ALT + C", noctalia_ipc_command("notifications clear"), { description = "Clear notifications" })
+hl.bind("SUPER + Space", noctalia_command("panel-toggle launcher"), { description = "Launcher" })
+hl.bind("SUPER + S", noctalia_command("panel-toggle control-center"), { description = "Control center" })
+hl.bind("SUPER + comma", noctalia_command("settings-toggle"), {description = "Settings" })
+hl.bind("SUPER + Escape", noctalia_command("session lock"), { description = "Lock screen" })
+hl.bind("SUPER + M", noctalia_command("launcher emoji"), { description = "Lock screen" })
+hl.bind("SUPER + ALT + Space", noctalia_command("panel-toggle wallpaper"), { description = "Wallpaper selector" })
+hl.bind("CTRL + ALT + C", noctalia_command("notifications-clear-history"), { description = "Clear all notifications" })
 
 -- Mouse bindings
 hl.bind("SUPER + mouse:272", hl.dsp.window.drag(), { mouse = true, description = "Move window" })    -- ALT + LMB: Move a window
@@ -116,15 +115,15 @@ for index = 1, 5 do
 end
 
 -- Volume, brightness, keyboard backlight, and touchpad controls.
-hl.bind("XF86AudioRaiseVolume", noctalia_ipc_command("volume increase"), { locked = true, repeating = true })
-hl.bind("XF86AudioLowerVolume", noctalia_ipc_command("volume decrease"), { locked = true, repeating = true })
-hl.bind("XF86AudioMute", noctalia_ipc_command("volume muteOutput"), { locked = true })
-hl.bind("XF86AudioMicMute", noctalia_ipc_command("volume muteInput"), { locked = true, repeating = true, description = "Mute microphone" })
-hl.bind("XF86MonBrightnessUp", noctalia_ipc_command("brightness increase"), { locked = true, repeating = true })
-hl.bind("XF86MonBrightnessDown", noctalia_ipc_command("brightness decrease"), { locked = true, repeating = true })
+hl.bind("XF86AudioRaiseVolume", noctalia_command("volume-up"), { locked = true, repeating = true })
+hl.bind("XF86AudioLowerVolume", noctalia_command("volume-down"), { locked = true, repeating = true })
+hl.bind("XF86AudioMute", noctalia_command("volume-mute"), { locked = true })
+hl.bind("XF86AudioMicMute", noctalia_command("mic-volume-mute"), { locked = true, repeating = true, description = "Mute microphone" })
+hl.bind("XF86MonBrightnessUp", noctalia_command("brightness-up"), { locked = true, repeating = true })
+hl.bind("XF86MonBrightnessDown", noctalia_command("brightness-down"), { locked = true, repeating = true })
 
 -- Media controls.
-hl.bind("XF86AudioNext", noctalia_ipc_command("media next"), { locked = true, description = "Next track" })
-hl.bind("XF86AudioPause", noctalia_ipc_command("media pause"), { locked = true, description = "Pause" })
-hl.bind("XF86AudioPlay", noctalia_ipc_command("media playPause"), { locked = true, description = "Play" })
-hl.bind("XF86AudioPrev", noctalia_ipc_command("media previous"), { locked = true, description = "Previous track" })
+hl.bind("XF86AudioNext", noctalia_command("media next"), { locked = true, description = "Next track" })
+hl.bind("XF86AudioPause", noctalia_command("media pause"), { locked = true, description = "Pause" })
+hl.bind("XF86AudioPlay", noctalia_command("media toggle"), { locked = true, description = "Play" })
+hl.bind("XF86AudioPrev", noctalia_command("media previous"), { locked = true, description = "Previous track" })

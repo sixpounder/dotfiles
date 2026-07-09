@@ -48,5 +48,5 @@ hl.on("hyprland.start", function()
     hl.exec_cmd("mpris-proxy")
 
     -- Start the user’s shell (or a custom launcher)
-    hl.exec_cmd("qs -c noctalia-shell")
+    hl.exec_cmd("noctalia")
 end)
