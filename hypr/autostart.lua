@@ -19,9 +19,12 @@ hl.on("hyprland.start", function()
     -- Once it is there, this should be enabled conditionally if the polkit plugin is
     -- not installed.
 
-    -- Pick one
-    -- hl.exec_cmd("/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1")
-    -- hl.exec_cmd("/usr/lib/hyprpolkitagent/hyprpolkitagent")   -- optional
+    if not require("noctalia.plugins").has_plugin("polkit") then
+        -- Pick one
+        hl.exec_cmd("/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1")
+        -- hl.exec_cmd("/usr/lib/hyprpolkitagent/hyprpolkitagent")   -- optional
+    end
+
 
     -- Clipboard history (text and image)
     hl.exec_cmd("wl-paste --type text  --watch cliphist store")

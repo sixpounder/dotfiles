@@ -1,25 +1,10 @@
 -- Refer to https://wiki.hypr.land/Configuring/Basics/Variables/
 
--- Yes, I know this can be done better than this
-local noctalia_vars, err = parse_conf_variables(os.getenv("XDG_CONFIG_HOME") .. "/hypr/noctalia/noctalia-colors.conf");
-
-if not noctalia_vars then
-  error("Error parsing legacy conf file for variables - " .. err)
-end
-
-local active_border_color = noctalia_vars.primary or { colors = { "rgba(33ccffee)", "rgba(00ff99ee)" }, angle = 45 }
-local inactive_border_color = noctalia_vars.surface or "rgba(595959aa)"
-
 hl.config({
   general = {
     gaps_in = WindowGapsIn,
     gaps_out = WindowGapsOut,
     border_size = WindowBorderSize,
-
-    col = {
-      active_border = noctalia_vars.primary,
-      inactive_border = noctalia_vars.surface,
-    },
 
     resize_on_border = true,
     allow_tearing = false,
@@ -47,11 +32,6 @@ hl.config({
   },
 
   group = {
-    col = {
-      border_active = active_border_color,
-      border_inactive = inactive_border_color,
-    },
-
     groupbar = {
       font_size = 12,
       font_family = MonospaceFont,

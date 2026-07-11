@@ -11,7 +11,7 @@ hl.bind("SUPER + comma", noctalia_command("settings-toggle"), {description = "Se
 hl.bind("SUPER + Escape", noctalia_command("session lock"), { description = "Lock screen" })
 hl.bind("SUPER + M", noctalia_command("launcher emoji"), { description = "Lock screen" })
 hl.bind("SUPER + ALT + Space", noctalia_command("panel-toggle wallpaper"), { description = "Wallpaper selector" })
-hl.bind("CTRL + ALT + C", noctalia_command("notifications-clear-history"), { description = "Clear all notifications" })
+hl.bind("CTRL + ALT + C", noctalia_command("notification-clear-history"), { description = "Clear all notifications" })
 
 -- Mouse bindings
 hl.bind("SUPER + mouse:272", hl.dsp.window.drag(), { mouse = true, description = "Move window" })    -- ALT + LMB: Move a window

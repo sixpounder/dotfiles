@@ -10,3 +10,6 @@ require("looknfeel")
 
 require_all.files(paths.config_home .. "/hypr/hyprland", "hyprland")
 require_all.files(paths.config_home .. "/hypr/apps", "apps")
+
+-- For Noctalia Color templates
+require("noctalia").apply_theme()
