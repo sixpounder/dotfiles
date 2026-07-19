@@ -1,6 +1,7 @@
 **/hypr/scheme/current.conf
 **/kitty/current-theme.conf
 **/kitty/colors-matugen.conf
+**/kitty/themes/noctalia.conf
 **/kitty/*.bak
 
 **/spicetify/config-xpui.ini
