@@ -9,7 +9,7 @@ hl.bind("SUPER + Space", noctalia_command("panel-toggle launcher"), { descriptio
 hl.bind("SUPER + S", noctalia_command("panel-toggle control-center"), { description = "Control center" })
 hl.bind("SUPER + comma", noctalia_command("settings-toggle"), {description = "Settings" })
 hl.bind("SUPER + Escape", noctalia_command("session lock"), { description = "Lock screen" })
-hl.bind("SUPER + M", noctalia_command("launcher emoji"), { description = "Lock screen" })
+hl.bind("SUPER + M", noctalia_command("panel-toggle launcher /emo"), { description = "Lock screen" })
 hl.bind("SUPER + ALT + Space", noctalia_command("panel-toggle wallpaper"), { description = "Wallpaper selector" })
 hl.bind("CTRL + ALT + C", noctalia_command("notification-clear-history"), { description = "Clear all notifications" })
 
@@ -36,7 +36,7 @@ hl.bind("SUPER + T", hl.dsp.window.float({ action = "toggle" }), { description =
 hl.bind("SUPER + F", hl.dsp.window.fullscreen({ mode = "fullscreen" }), { description = "Full screen" })
 hl.bind("SUPER + CTRL + F", hl.dsp.window.fullscreen_state({ internal = 0, client = 2 }), { description = "Tiled full screen" })
 hl.bind("SUPER + ALT + F", hl.dsp.window.fullscreen({ mode = "maximized" }), { description = "Full width" })
-hl.bind("SUPER + L", hl.dsp.exec_cmd("/home/sixpounder/.local/bin/omarchy-hyprland-workspace-layout-toggle"), { description = "Toggle workspace layout" })
+hl.bind("SUPER + L", hl.dsp.exec_cmd(os.getenv("HOME") .. "/.local/bin/omarchy-hyprland-workspace-layout-toggle"), { description = "Toggle workspace layout" })
 
 hl.bind("SUPER + LEFT", hl.dsp.focus({ direction = "l" }), { description = "Focus on left window" })
 hl.bind("SUPER + RIGHT", hl.dsp.focus({ direction = "r" }), { description = "Focus on right window" })

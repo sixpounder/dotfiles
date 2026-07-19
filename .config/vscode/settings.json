@@ -1,0 +1,24 @@
+{
+    "chat.disableAIFeatures": true,
+    "git.enableSmartCommit": true,
+    "git.confirmSync": false,
+    "git.autofetch": true,
+    "editor.fontFamily": "Monaspace Neon NF, 'monospace', monospace",
+    "editor.fontLigatures": true,
+    "editor.smoothScrolling": true,
+    "editor.cursorSmoothCaretAnimation": "on",
+    "dart.flutterSdkPath": "/home/sixpounder/.flutter/sdk/flutter",
+    "workbench.colorTheme": "NoctaliaTheme",
+    "workbench.iconTheme": "catppuccin-macchiato",
+    "workbench.experimental.modernUI": true,
+    "[typescript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[json]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "telemetry.feedback.enabled": false,
+    "telemetry.telemetryLevel": "off",
+    "telemetry.editStats.enabled": false,
+    "gitlens.telemetry.enabled": false
+}
