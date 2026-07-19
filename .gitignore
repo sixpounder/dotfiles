@@ -1,7 +1,10 @@
-/hypr/scheme/current.conf
+**/hypr/scheme/current.conf
+**/kitty/current-theme.conf
+**/kitty/colors-matugen.conf
+**/kitty/*.bak
 
-/spicetify/config-xpui.ini
-/spicetify/Themes/caelestia/color.ini
+**/spicetify/config-xpui.ini
+**/spicetify/Themes/caelestia/color.ini
 
 /btop/btop.log
 /btop/themes/

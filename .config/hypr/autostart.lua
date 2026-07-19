@@ -9,9 +9,6 @@ hl.on("hyprland.start", function()
     hl.exec_cmd(
         "dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
     )
-
-    -- Keyring and authentication agents
-    hl.exec_cmd("gnome-keyring-daemon --start --components=secrets")
     
     -- These are disabled because we use the noctalia polkit plugin.
     -- Currently there is no way (apparently) to query noctalia shell
@@ -24,6 +21,9 @@ hl.on("hyprland.start", function()
         hl.exec_cmd("/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1")
         -- hl.exec_cmd("/usr/lib/hyprpolkitagent/hyprpolkitagent")   -- optional
     end
+
+    -- Keyring and authentication agents
+    hl.exec_cmd("gnome-keyring-daemon --start --components=secrets")
 
 
     -- Clipboard history (text and image)
