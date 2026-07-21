@@ -100,3 +100,10 @@ KbClearNotifs = "Ctrl+Alt, C"
 KbShowPanels = "Super, K"
 KbLock = "Super, Escape"
 KbRestoreLock = "Super+Alt, L"
+
+-- Picture in Picture
+PIPWindowSize = {
+    width = 768,
+    height = 432,
+    padding = 16
+}

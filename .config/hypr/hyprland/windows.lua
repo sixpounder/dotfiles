@@ -14,8 +14,8 @@ hl.window_rule({
     match = {
         title = "Picture.?in.?[Pp]icture"
     },
-    move = { "(monitor_w-window_w-16)", "(monitor_h-window_h-16)" },
-    size = "768 432",
+    move = { "(monitor_w-" .. PIPWindowSize.width .. "-" .. PIPWindowSize.padding .. ")", "(monitor_h-" .. PIPWindowSize.height .. "-" .. PIPWindowSize.padding .. ")" },
+    size = PIPWindowSize.width .. " " .. PIPWindowSize.height,
     keep_aspect_ratio = true,
     float = true,
     pin = true,

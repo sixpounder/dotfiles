@@ -25,7 +25,7 @@ hl.env("XDG_SESSION_DESKTOP", "Hyprland")
 hl.env("_JAVA_AWT_WM_NONREPARENTING", "1")
 
 -- SSH
-hl.env("SSH_AUTH_SOCK", "$XDG_RUNTIME_DIR/ssh-agent.socket")
+hl.env("SSH_AUTH_SOCK", "$XDG_RUNTIME_DIR/gcr/ssh")
 
 -- GDK
 hl.env("GDK_SCALE", "1")

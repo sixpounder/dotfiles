@@ -23,7 +23,7 @@ hl.on("hyprland.start", function()
     end
 
     -- Keyring and authentication agents
-    hl.exec_cmd("gnome-keyring-daemon --start --components=secrets")
+    -- hl.exec_cmd("gnome-keyring-daemon --start --components=secrets")
 
 
     -- Clipboard history (text and image)
