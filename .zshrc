@@ -107,9 +107,9 @@ export EDITOR='nvim'
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
-#
-# Example aliases
+
 alias zshconfig="nvim ~/.zshrc"
+alias ff="fastfetch"
 alias nv="nvim"
 alias dc="docker compose"
 alias ls="eza -lh --group-directories-first --icons=auto"
