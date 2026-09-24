@@ -4,7 +4,10 @@ hl.config({
         numlock_by_default = false,
         repeat_delay = 250,
         repeat_rate = 35,
-        focus_on_close = 1
+        focus_on_close = 1,
+        touchpad = {
+            natural_scroll = true
+        }
     },
     cursor = {
         hotspot_padding = 1

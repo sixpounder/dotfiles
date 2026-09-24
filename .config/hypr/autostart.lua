@@ -4,6 +4,8 @@
 --  It follows the conventions described on the Hyprland wiki.
 -- ──────────────────────────────────────────────────────────────────────
 
+require("shell")
+
 hl.on("hyprland.start", function()
     -- Environment for xdg-desktop-portal-hyprland
     hl.exec_cmd(
@@ -49,6 +51,9 @@ hl.on("hyprland.start", function()
 
     -- Forward Bluetooth media keys to MPRIS
     hl.exec_cmd("mpris-proxy")
+
+    -- Shelly notifications (if available)
+    hl.exec_cmd("shelly-notifications")
 
     -- Start the user’s shell (or a custom launcher)
     hl.exec_cmd("noctalia")

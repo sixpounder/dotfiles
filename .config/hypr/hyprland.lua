@@ -1,4 +1,4 @@
-local require_all = require("require_all")
+local require_all = require("lua.require_all")
 local paths = require("paths")
 
 require("variables")
@@ -8,8 +8,8 @@ require("input")
 require("autostart")
 require("looknfeel")
 
-require_all.files(paths.config_home .. "/hypr/hyprland", "hyprland")
-require_all.files(paths.config_home .. "/hypr/apps", "apps")
+require_all.require_all_config("hypr/hyprland", "hypr.hyprland")
+require_all.require_all_config("hypr/apps", "hypr.apps")
 
 -- For Noctalia Color templates
 require("noctalia").apply_theme()

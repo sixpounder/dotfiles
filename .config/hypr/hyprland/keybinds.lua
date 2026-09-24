@@ -4,6 +4,20 @@ local function noctalia_command(cmd)
     end
 end
 
+local function noctalia_is_running()
+    local pipe = io.popen("pgrep -af '[n]octalia' 2>/dev/null")
+    if not pipe then
+        return false
+    end
+
+    local output = pipe:read("*a")
+    pipe:close()
+
+    return output ~= nil and output ~= ""
+end
+
+local noctalia_running = noctalia_is_running();
+
 -- Core (noctalia shell)
 hl.bind("SUPER + Space", noctalia_command("panel-toggle launcher"), { description = "Launcher" })
 hl.bind("SUPER + S", noctalia_command("panel-toggle control-center"), { description = "Control center" })
@@ -24,8 +38,13 @@ hl.bind(KbBrowser, hl.dsp.exec_cmd(Browser), { description = "Browser" })
 hl.bind(KbEditor, hl.dsp.exec_cmd(Editor), { description = "Editor" })
 
 -- Screenshot
--- hl.bind("PRINT", hl.dsp.exec_cmd("if area=$(slurp); then grim -g \"$area\" - | tee >(wl-copy) > ~/Pictures/Screenshots/Screenshot-$(date +%F_%T).png && dunstify --app-name Screenshot \"Screenshot copied to clipboard\" -t 1000; fi"))
-hl.bind("PRINT", hl.dsp.exec_cmd("hyprshot --freeze --o ~/Pictures/Screenshots -f Screenshot-$(date +%F_%T).png -m region"))
+if noctalia_running then
+    hl.bind("PRINT", hl.dsp.exec_cmd("noctalia msg screenshot-region"))
+    hl.bind("SHIFT + PRINT", hl.dsp.exec_cmd("noctalia msg screenshot-annotate"))
+else
+    hl.bind("PRINT", hl.dsp.exec_cmd("hyprshot --freeze --o ~/Pictures/Screenshots -f Screenshot-$(date +%F_%T).png -m region"))
+end
+
 
 -- Tiling
 hl.bind(KbCloseWindow, hl.dsp.window.close(), { description = "Close window" })
